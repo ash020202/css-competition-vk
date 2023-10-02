@@ -1,0 +1,231 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: url(thovanambg.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+   
+}
+
+.header .logo img{
+    width:80px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header{
+    height: 60px;
+    width: 100%;
+    
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a{
+    color: #0ecaef;
+text-decoration: none;}
+
+.header a li{
+    list-style: none;
+    font-weight:bold;
+    text-transform:uppercase;
+    margin-right: 50px;
+    cursor: pointer;
+    position: relative;
+    padding-bottom: 5px;
+
+}
+
+a li::before{
+    content: "";
+    height: 3px;
+    width: 0%;
+    background: #0c83cd;
+    display: block;
+    position: absolute;
+    border-radius: 10px;
+    bottom:0;
+    transition: all .5s ease;
+}
+
+li:hover::before{
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#home{
+    width: 100%;
+    height: 100%;
+    color: #0c83cd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   backdrop-filter: blur(2px);
+}
+
+#home img{
+    height: 300px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+#contain{
+   min-height: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+   
+  
+   
+}
+
+
+.content{
+    margin-top: 10px;
+    padding: 10px;
+    height: 150px;
+    width: 500px;
+ background: rgba(255,255,255,0.8);
+  
+   right: 400px;
+   border-radius: 10px;
+   text-align: justify;
+}
+.contain hr{
+    border: 1px solid 
+    #0ecaef;
+    margin:10px 0px ;
+}
+#home p{
+    font-weight: bold;
+
+}
+
+#ticket{
+    text-align: center;
+   margin-top: 10px;
+    height: 500px;
+    width: 100vw;
+    background: #0c83cd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    border-radius: 10px;
+}
+
+.tic-head{
+    width: 100%;
+}
+
+.input-fields{
+    height: 300px;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    background:rgba(255,255,255,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center ;
+    box-shadow: 16px 12px 45px 25px rgba(0,0,0,0.1);
+    
+}
+
+.input-fields input{
+    margin: 10px;
+    padding: 10px;
+    background: lightblue;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.input-fields label{
+    font-family: poppins;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.input-fields button{
+    padding: 5px;
+    width: 100px;
+    margin: 10px;
+    background: none;
+    border: 2px solid #0c83cd;
+    border-radius: 10px;
+    color: white;
+transition: transform .5s ease;
+}
+
+.input-fields input:focus{
+    border:2px solid #0c83cd;
+   
+}
+
+.input-fields button:hover{
+transform: scale(1.1);
+border: 2px solid white;
+}
+
+#contact {
+ width: 500px;
+    height: 100%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: white;
+}
+#contact h2 {
+    text-align: center;
+   
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group textarea {
+    height: 150px;
+}
+.form-group button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.form-group button:hover {
+    background-color: #0056b3;
+}
