@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Delicious+Handrawn&family=Inter:wght@300;400&family=Poppins:ital,wght@0,500;1,600&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap');
+*{
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Alkatra', cursive;
+font-family: 'Delicious Handrawn', cursive;
+font-family: 'Inter', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+scroll-behavior: smooth;
+
+}
+body{
+    background: black;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+.head{
+    height: 60px;
+    width:100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.head h4{
+    background: none;
+    padding: 15px 10px;
+    font-size:24px;
+    font-weight:bold;
+}
+.head img{
+ height: 100%;
+ width: 60px;
+}
+
+
+
+.soc-links{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+   gap: 30px;
+}
+
+.soc-links svg{
+    height: 2em;
+    width: 2em;
+    fill: #C7F31A;
+    border-radius: 50%;
+}
+
+.soc-links svg:hover,svg:focus{
+    box-shadow:0px 0px 60px 10px #C7F31A;
+    scale: 1.1;
+}
+
+.menu{
+    position: relative;
+    height: 40px;
+    width: 40px;
+    background: #C7F31A;
+    border-radius: 50%;
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    align-items: center;
+}
+.box{
+    /* position: absolute; */
+    height:2px;
+    width: 70%;
+    background: black;
+    transition: .5s all ease;
+    
+    
+}
+
+@media (max-width:600px) {
+    .menu{
+        display: flex;
+    }
+}
+
+.Home{
+    min-height: 100%;
+   width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content{
+    margin: 50px 50px;
+    min-height: 300px;
+    width:400px;
+    display: flex;
+    justify-content: center;
+   
+    flex-direction: column;
+    gap: 20px;  
+    
+}
+
+.content h4{
+    font-size: 2em;
+    opacity: 0.5;
+}
+.content h1{
+    font-size: 4em;
+   font-weight: 900;
+   color: #C7F31A;
+}
+.content h3{
+    font-size: 3em;
+}
+.content p{
+    font-size: 12px;
+    opacity: 0.5;
+    font-family: poppins;
+}
+
+
+
+.btn button{
+    margin: 0px 50px;
+    height: 40px;
+    width:110px;
+    background:#C7F31A;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    color: black;
+    font-size:1em;
+    font-family: poppins;
+}
+
+.btn a{
+    font-family: poppins;
+    text-underline-offset: 5px;
+}
+.btn span{
+    color: #C7F31A;
+    font-family: poppins;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+}
+
+
+.image img{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+object-fit: cover;
+
+}
+
+.stats{
+    height: 350px;
+    width: 240px;
+    padding:20px;
+    margin: 50px;
+    border: 2px solid #C7F31A;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    box-shadow:0px 0px 60px 0px #C7F31A;
+    transition: .5s all ease;
+   
+    
+}
+.stats h1,p{
+    font-family: poppins;
+}
+
+.project{
+    width: 170px;
+}
+
+.stats h1{
+    color: #C7F31A;
+}
+.stats p{
+ opacity: 0.5;
+}
+.exp{
+    width: 100%;
+    border-bottom: 2px solid #C7F31A;
+    padding: 0px 0px 40px 0px;
+}
+
+.stats:hover{
+    scale: 1.1;
+}
+
+.side-bar{
+
+    padding: 30px 10px;
+    gap: 20px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(2px);
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+   list-style: none;
+   border-radius: 10px;
+   border: 2px solid #C7F31A;
+   position:absolute;
+   top: 80px;
+   right: -30%;
+   transition: .5s;
+}
+
+
+.side-bar  li{
+    text-align: center;
+    width: 100%;
+}
+
+.side-bar a{
+    padding: 20px;
+    text-decoration: none;
+    font-family: poppins;
+    text-align: center;
+    transition: .2s all linear;
+    border-radius: 10px;
+
+}
+
+.side-bar  li a:hover,.side-bar  li a:focus{
+    background-color: #C7F31A;
+    color: black;
+    
+}
+
+.side-bar.active{
+    right: 20px;
+}
+
+
+.menu.active .box:nth-child(1){
+   position: absolute;
+    transform: rotate(45deg);
+}
+
+.menu.active .box:nth-child(2){
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.Home.active{
+    filter: blur(5px);
+}
+
+.contain-2{
+    min-height: 100%;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#about{
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+    padding: 80px;
+    
+}
+#about p{
+    font-weight: 400px;
+    opacity: 0.5;
+}
+
+#about h3{
+    font-size: 3em;
+    font-weight: bold;
+    padding: 10px 0px;
+}
+
+#about span{
+    color: #C7F31A;
+}
+
+.works{
+    margin-top:10px ;
+list-style: none;
+    height: 80px;
+    width: 400px;
+ display: flex;
+justify-content: space-between;
+
+ gap: 20px;
+ flex-wrap: wrap;
+}
+.works svg{
+    width: 20px;
+    height: 30px;
+}
+
+.works li{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.works li:nth-child(2){
+margin-right:25px ;
+}
+
+.works p{
+    opacity: 1;
+}
+
+.contact{
+    height: 60px;
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 5px 10px;
+
+}
+.contact svg{
+    background-color: #C7F31A;
+    border-radius: 50%;
+    
+    padding: 5px;
+    height: 40px;
+    width: 40px;
+
+}
+.contact p{
+    font-size: small;
+    opacity: 0.5;
+   
+}
+.contact span{
+    color: white;
+    opacity: 1;
+    font-family: poppins;
+}
+
+.email,.phone{
+    
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;    
+}
+
+.contain-2 img{
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+
+}
+
+.contain-3{
+    min-height: 100%;
+    width: 100vw;
+    display: flex;
+    
+}
+
+.star{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    width: 150px;
+    background:rgba(255,255,255,0.15);
+    border-radius: 50%;
+}
+
+.my-resume{
+    height: 100px;
+    width: 400px;
+   
+}
+
+.my-resume p{
+opacity: 0.5;
+padding: 0px 0px 5px 0px;
+}
+
+.my-resume h3{
+    font-size: 2em;
+    font-weight: bold;
+   
+}
+
+.my-resume span{
+    color: #C7F31A;
+    
+}
+
+.res-con{
+    height: 300px;
+    width: 600px;
+    background:rgba(255,255,255,0.15);
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.res-con .box-1{
+    height: 50px;
+    width:200px;
+
+}
+
+.box-1:nth-child(1){
+    border-right: 1px solid #C7F31A;
+}
+
+.box-1:nth-child(3){
+    border-right: 1px solid #C7F31A;
+}
+
+.contain-3 .innercontain-1{
+    width: 30%;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contain-3 .innercontain-2{
+    width: 70%;
+    display: flex;
+    gap: 50px;
+    flex-direction: column;
+    justify-content: center;
+    align-items:start;
+    flex-wrap: wrap;
+}
+
