@@ -1,0 +1,197 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+
+}
+.main{
+    min-width: 300px;
+    min-height: 500px;
+    background: #2d2e30;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    
+
+}
+
+.nav{
+   
+    width: 100%;
+   height:50px ;
+    background: #54555879;
+   
+    display: flex;    
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 999;
+
+}
+
+.nav button{
+    height: 100%;
+    width: 40px;
+    padding: 10px;
+    background:none;
+    border: none;
+    outline: none;
+}
+
+.nav button svg{
+    height: 100%;
+    width: 100%;
+    
+}
+
+.name{
+    height: 100%;
+    width:2;
+    padding: 5px;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.name .num{
+    margin-top: 3px;
+    font-size: 10px;
+}
+
+.logo{
+    background: #004c3f;
+    color: white;
+    height: 60%;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 1px 0px white;
+}
+
+.nav .box{
+    height: 100%;
+    width:30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.dot{
+   width: 3px;
+   height: 3px;
+   background: white;
+   margin: 1px;
+   border-radius: 50%;
+}
+
+.card-container{
+    height:450px;
+    
+    display: flex;
+    flex-direction: column;
+   align-items: end;
+   justify-content: end;
+   
+    gap: 20px;
+padding: 50px 10px;
+   
+}
+
+.amt-card{
+    color: white;
+    background: #54555879;
+
+    padding: 12px 11px;
+    
+    display: flex;
+    
+
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;    gap: 20px;
+    width: 170px;
+    height: 110px;
+    border-radius: 20px;
+    position: relative;
+}
+.amt{
+    font-size: 25px;
+    margin: 12px 0px;
+    
+}
+.text .date p{
+    font-size: 10px;
+    
+}
+.amt-card .text {
+    font-size: 12px;
+    line-height: 17px;
+}
+.text .tick{
+
+    background: lightgreen;
+    border-radius: 50%;
+   padding: 1px;
+   position: absolute;
+   bottom: 13px;
+   left: 10px;
+
+}
+
+.text .arrow{
+    padding: 1px;
+    height: 12px;
+    rotate: -180deg;
+    position: absolute;
+   bottom: 13px;
+   right: 10px;
+}
+
+.date{
+   
+    display: flex;
+    gap: 5px;
+    justify-content: start;
+    align-items: center;
+    width: 100px;
+    position: absolute;
+    bottom:9px ;
+    left: 28px;
+   
+ 
+}
+
+.foot{
+  
+    padding: 5px 20px;
+  position: relative;
+  bottom: 15px;
+    
+    
+}
+
+.foot button{
+    border-radius: 20px;
+  padding: 8px 18px;
+  border: none;
+  outline: none;
+  background: skyblue;
+    font-weight: lighter;
+font-size: 11px;
+
+}
+
