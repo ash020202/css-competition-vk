@@ -463,3 +463,10 @@ padding: 0px 0px 5px 0px;
     flex-wrap: wrap;
 }
 
+
+#particles-js{
+    position: absolute;
+    width: 300vw;
+    height: 300vh;
+  }
+  

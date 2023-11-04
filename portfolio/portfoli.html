@@ -4,8 +4,10 @@
 <title>My Portfolio</title>
 <link rel="icon" href="favicon.png" type="image/png" >
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <div id="particles-js"></div>
 <div class="head">
 <img src="VK.png" alt=""><h4>My Portfolio</h4>
 <div class="soc-links" >
@@ -34,7 +36,7 @@
 </div>
 
 </div>
-
+<div id="particles-js"></div>
 <div class="Home">
 
 <div class="content">
@@ -94,7 +96,7 @@
   </ul>
 
 
-
+  <div id="particles-js"></div>
 <div class="contain-2">
 <div id="about">
 <p>About Me</p>
@@ -140,7 +142,7 @@
 <img src="abtimg.jpg" alt="">
 
 </div>
-
+<div id="particles-js"></div>
 <div class="contain-3">
     <div class="innercontain-1">
         <div class="star">
@@ -208,6 +210,19 @@
         container.classList.toggle('active');
         
     })
+
+
+    particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 50, // Reduce the number of particles
+    },
+    size: {
+      value: 2, // Change the size of particles to a smaller value
+    },
+    // Configure other particle options here
+  },
+});
 </script>
 
 </body>
