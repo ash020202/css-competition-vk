@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishFighter Form</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: beige;
+            color: brown;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;            
+        }
+       body > p{
+            padding-top: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+       
+        .form{
+            background: rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width:500px;
+            height: 350px;
+            border-radius: 10px;
+            transition: .4s ease;
+        }
+        .form-blur{
+            filter: blur(5px);
+        }
+        #phishForm{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            
+        }
+        #phishForm input{
+            border: none;
+            border-bottom: 1px solid brown;
+            outline: none;
+            background: none;
+            width: 300px;
+            padding: 10px;
+        }
+        #phishForm button{
+            background: brown;
+            outline: none;
+            border: none;
+            padding: 10px 50px;
+            border-radius: 20px;
+            color: bisque;
+            transition: .5s ease;
+        }
+        #phishForm input::placeholder{
+            color:brown;
+        }
+        #phishForm button:hover{
+            box-shadow: 0px 0px 60px 0px bisque;
+        }
+        .warning{
+            position: absolute;
+            z-index: 999;
+            top: 0;
+            left: 50%;
+            transform:translate(-50%,-50%) scale(0.1);
+            visibility: hidden;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 60px 0px black;
+            width: 400px;
+            height: 200px;
+           text-align: center;
+           padding-top: 30px;
+           color: red;
+           transition: transform .4s,top 0.4s;
+
+        }
+        .warn-pop{
+            top: 25%;
+            left: 35%;
+            transform: scale(1);
+            visibility: visible;
+        z-index: 999;
+            
+
+        }
+        .warning button{
+            background: red;
+            outline: none;
+            border: none;
+            padding: 10px 50px;
+            border-radius: 20px;
+            color: bisque;
+            transition: .5s ease; 
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <p>Fill Your Details To Claim The Prize </p>
+    <div class="form">
+    <form id="phishForm">
+        <input type="text" name="username" placeholder="NAME" >
+        <input type="tel" name="username" placeholder="MOBILE" >
+
+        <input type="text" id="password" name="password" placeholder="AADHAR NUMBER">
+
+
+        <button type="submit" onclick="openPopup(event)">Submit</button>
+    </form>
+</div>
+
+<div class="warning">
+    <h3>Warning!</3>
+        <p>You are sharing sensitive information. <br> Please be cautious</p>
+<button onclick="closePopup(event)">Close</button>
+</div>
+    
+<script>
+    var warn = document.querySelector('.warning');
+    var form = document.querySelector('.form');
+    function openPopup(event) {
+        event.preventDefault();
+        warn.classList.add("warn-pop");
+        form.classList.add("form-blur");
+    }
+    function closePopup(event) {
+        event.preventDefault();
+        warn.classList.remove("warn-pop");
+        form.classList.remove("form-blur");
+
+    }
+    </script>
+    
+  
+</body>
+</html>
