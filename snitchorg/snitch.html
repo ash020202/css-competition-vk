@@ -17,6 +17,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: Montserrat;
+            scroll-behavior: smooth;
         }
         
         #main-container {
@@ -2321,6 +2322,7 @@
         var list =document.querySelector(".list");
         console.log(list);
         burger.addEventListener("click", () => {
+            window.scrollTo(0, 0); 
             sideBar.classList.toggle('slide');
             contain.classList.toggle("active");
             list.classList.add("listactive");
