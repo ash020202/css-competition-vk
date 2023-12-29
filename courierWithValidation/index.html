@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            cursor: url('./cursor.png'),auto;
+        }
+        .container{
+            
+            overflow: hidden;
+            min-height: 100dvh;
+            width: 100dvw;
+            background-color: #fbbd04;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .container h1{
+            color: #ff5052;
+        }
+        .form form{
+           width: 700px;
+            height: 400px;
+            background-color: #fbf3eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            text-align: left;
+            border-radius: 10px;
+            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;      
+            filter: drop-shadow(8px 8px 0px #000); */
+            box-shadow: 4px 7px 0px black;
+        } 
+        .form p{
+            font-size: 12px;
+            visibility: hidden;
+        }
+        .form input{
+            outline: none;
+            border: none;
+            padding:8px;
+            width: 400px;
+            border-radius: 3px;
+            background-color:#fbf3eb ;
+            border-bottom: 2px solid black;
+        }
+        .form button{
+            background: #e05653;
+            padding: 8px 90px;
+            outline: none;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 5px 5px 0px 0px #000;
+            border: 2px solid black;
+            font-weight: bold;
+
+        }
+        .form button:active{
+  transform: translateY(4px);
+   box-shadow: 1px 2px 0px 0px #000;
+}
+form h3{
+    color: #70cdde;
+}
+        .pickup{
+            
+            padding: 20px;
+            background-color: #fbf3eb;
+            width: 80%;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+            align-items: center;
+            gap: 30px;
+            border-radius: 10px;
+            /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+            box-shadow: 4px 7px 0px black;
+        }
+        #pickuptab{
+            max-width:80%;
+            overflow:hidden;
+    
+   
+    text-overflow: ellipsis;
+  
+          
+        }
+   
+       
+        table, th, td {
+            background-color:#fbf3eb ;
+  border: 1px solid black ;
+  border-collapse: collapse;
+  text-align: center;
+  overflow:hidden;
+    text-overflow: ellipsis;
+    
+  
+}
+table th{
+    padding: 5px;
+    background-color: #9f938a !important;
+    border: 2px solid black;
+}
+table td{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    background-color: #d0c2b8;
+    padding: 10px;
+    max-width:200px;
+    border: 2px solid black;
+}
+table tr{
+    max-width:200px;
+}
+
+.pickup p{
+    font-weight: bold;
+    
+}
+.form-group.error p{
+    color: #e05653;
+    visibility: visible;
+}
+.form-group.error input{
+    border-bottom: 2px solid #e05653;
+}
+.form-group.success input{
+    border-bottom: 2px solid #4cd137;
+}
+#inp{
+    
+    
+    max-width:200px;
+    
+}
+table td:nth-child(5){
+    
+    word-wrap: break-word;
+}
+#del{
+    background-color:#e05653 ;
+    color: black;
+    padding: 5px 30px ;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+    border: 2px solid black;
+    box-shadow: 5px 5px 0px 0px #000;
+
+}
+#del:active{
+    transform: translateY(4px);
+   box-shadow: 1px 2px 0px 0px #000;
+}
+/* Firefox */
+*{
+    scrollbar-width: auto;
+    scrollbar-color: #171615 #FFFFFF;
+}
+
+/* Other browsers */
+*::-webkit-scrollbar{
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track{
+    background: #FFFFFF;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #171615;
+    border-radius: 14px;
+    border: 3px solid #f8f2f2;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>VK Courier Service</h1>
+        <div class="form">
+            <form action="#" id="form" autocomplete="off">
+            <h3>Enter Details For Pickup</h3>
+            <div class="form-group">
+                <input placeholder="Name" id="name" type="text">
+                <p></p>
+            </div>
+            <div class="form-group">
+                <input placeholder="Mob.No" id="number" type="number">
+                <p></p>
+            </div>
+            <div class="form-group">
+                <input placeholder="Date Of Pickup" id="date" type="date">
+                <p></p>
+            </div>
+            <div class="form-group">
+                <input placeholder="Address" id="address" type="textarea">
+                <p></p>
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+        </div>
+
+        <div class="pickup"><p>Courier Requests</p>
+            <table id="pickuptab">
+                <tr>
+                    <th>C.No</th><th>Customer</th><th>Mobile</th><th>Pick-Up Date</th><th>Address</th>
+                </tr>
+               
+            </table>
+
+        </div>
+
+    </div>
+   
+<script defer>
+    const form=document.getElementById('form');
+    const uname=document.getElementById('name');
+    const num=document.getElementById('number');
+    const date=document.getElementById('date');
+    const address=document.getElementById('address');
+    const table=document.getElementById('pickuptab');
+
+ 
+    
+   
+    form.addEventListener('submit',function (e){
+        e.preventDefault();
+    if(validateForm([uname,num,date,address])==true){
+       storeData([uname,num,date,address]);
+
+    }
+    else{
+        
+
+    }
+    });
+    function validateForm(inputs){
+        var flag=1;
+        inputs.forEach(input => {
+            if(input.value.trim()=="")
+            {
+                setError(input,`${input.id} is Required`);
+                 flag=1;
+
+            }
+            else{
+              
+                    setSucces(input);
+             
+                
+                flag++;
+            }
+        });
+        if(flag==1){
+            return false;
+        }
+        else{
+            return true;
+        }
+        
+    }
+    function setError(input,message){
+        const formControl=input.parentElement;
+        formControl.className="form-group error";
+        const p = formControl.querySelector('p');
+        p.innerHTML=message;
+        setTimeout(()=>{
+            formControl.className="form-group";
+
+        },2000);
+    }
+    function setSucces(input){
+        const formControl=input.parentElement;
+        formControl.className="form-group success";
+        const p = formControl.querySelector('p');
+        p.innerHTML='';
+        setTimeout(()=>{
+            formControl.className="form-group";
+
+        },2000);
+    }
+
+    function storeData(inputs){
+        const btn=document.createElement('button');
+        btn.id="del";
+        btn.innerText='Delete';
+        let cnum=Math.round(Math.random()*50);
+        var tr=document.createElement('tr');
+       
+        var td=tr.appendChild(document.createElement('td'));
+       td.id='cnum';
+        td.innerHTML=cnum;
+        table.appendChild(tr);
+        
+        inputs.forEach(input=>{
+            var td=tr.appendChild(document.createElement('td'));
+            td.id="inp"
+            td.innerHTML=input.value;
+            table.appendChild(tr);
+            
+            input.value='';
+        })
+        var td=tr.appendChild(document.createElement('td'));
+        td.append(btn);
+        btn.addEventListener('click',()=>{
+            table.removeChild(tr);
+        })
+    }
+</script>
+
+</body>
+</html>
