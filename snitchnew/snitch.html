@@ -121,10 +121,20 @@
                 margin-bottom: 50px;
             }
 
-
-
+            .image-select{
+                display: none;
+            }
+            .card-left .main-image{
+                display: none;
+                
+            }
+            .product-card button{
+                display: none;
+            }
+          
+   
         }
-
+        
         header {
             max-height: 100px;
             width: 100dvw;
@@ -169,7 +179,9 @@
         .swiper {
             width: 100%;
             height: 100%;
+
         }
+        
 
         .swiper-slide {
             text-align: center;
@@ -190,6 +202,7 @@
 
         .swiper-slide {
             width: 100%;
+          
         }
 
         .swiper-pagination-bullet-active {
@@ -208,8 +221,8 @@
 
         }
 
-        .choice a,
-        a:active {
+        .choice .anchor,
+        .anchor:active {
 
             text-decoration: none;
             color: black;
@@ -222,8 +235,8 @@
             transition: .5s all ease;
         }
 
-        .choice a:hover,
-        a:focus {
+        .choice .anchor:hover,
+        .anchor:focus {
             background-color: black;
             color: white;
         }
@@ -293,8 +306,8 @@
 
         }
 
-        .box img:hover {
-            content: url("https://www.snitch.co.in/cdn/shop/files/4MSS2463-03-M41.jpg?v=1700573669&width=1800");
+        .box img:nth-child(1):hover {
+            /* content: url("//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M36.jpg?v=1700573728&width=1080"); */
             transform: scale(1.1);
 
         }
@@ -569,38 +582,207 @@
        #product-detail{
         height: 100dvh;
         overflow-y: hidden;
-        /* max-height: 100dvh !important; */
         width: 100dvw;
-        /* background: white;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-        background: rgba(0, 0, 0, 1);
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(15px);
         z-index: 999;
         position: fixed;
        inset: 0;
        display: none;
+     /* display: flex; */
+       justify-content: center;
+       align-items: center;
        }
        #product-detail.active{
-        display: block;
+        display: flex;
+        
        }
        #product-detail .close{
         display: flex;
         justify-content: flex-end;
-        background-color: red;
+       position: fixed;
+       top: 30px;
+        right: 135px;
+        padding: 0;
+        
        }
-       #close{
+       .close button{
+        background:none;
+        border: none;
+       }
+       button ion-icon{
+        font-size: 20px;
+        font-weight: bold;
+       }
+       .product-card{
+        
+        height: 500px;
+        width: 80%;
         background-color: white;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        display: flex;
+        
+        align-items: start;
+    
        }
+       .card-left{
+        width: 300px;
+        
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-evenly;
+    
+        
+        
+       }
+       .main-image img{
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+
+       }
+       .main-image{
+        width: 100%;
+       
+        display: flex;
+       
+        transition:all .5s ease;
+       /* transform: translateX(30px); */
+       }
+       .select-gallery{
+        width:100px;
+        height:100%;
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        
+       }
+       
+       
+       ::-webkit-scrollbar{
+        width: 2px;
+        background: none;
+        
+       }
+       .image-select{
+       
+        width: 100%;
+        height: 100%;
+           }
+           
+           .image-select img{
+            height: 100%;
+            width: 100%;
+           object-fit: cover;
+        
+
+
+           }
+           .image-select.active img{
+            border: 1px solid black;
+    
+           }
+           .product-card button{
+            width: 100px;
+            position: fixed;
+            background: white;
+            border: none;
+            
+           }
+           #prev{
+            top: 25px;
+           }
+           #next{
+            bottom: 25px;
+           }
+           .select-gallery button ion-icon{
+            font-size: 40px;
+           }
+
+        
     </STYLE>
 </head>
 
 <body>
     <div id="product-detail">
         <div class="close">
-            <button id="close">Close</button>
+            <button id="close"><ion-icon name="close-outline"></ion-icon></button>
         </div>
-        <div></div>
-    </div>
+        <div class="product-card">
+                <button id="prev"><ion-icon name="chevron-up-circle-outline"></ion-icon></button>
+                <div class="select-gallery">
+                    
+                    <div class="image-select"><a data-id="1" href="#"><img id="img1"  src=""></a>
+                    </div>
+                    <div class="image-select">
+                   <a data-id="2" href="#"><img id="img2"  src="" alt=""></a>
+                    </div>
+                    <div class="image-select">
+                        <a data-id="3" href="#"><img id="img3"  src="" alt=""></a>
+                    </div>
+                    <div class="image-select">
+                        <a data-id="4" href="#"><img id="img4" src="" alt=""></a>
+                    </div>
+                    <div class="image-select">
+                        <a data-id="5" href="#"><img id="img5" src="" alt=""></a>
+                    </div>
+                    <div class="image-select">
+                        <a data-id="6" href="#"><img id="img6"  src="" alt=""></a>
+                    </div>
+                    <div class="image-select">
+                        <a data-id="7" href="#"><img id="img7" src="" alt=""></a>
+                    </div>  
+                    
+                     
+                       
+                    
 
+                
+                    
+                </div>
+                <button id="next"><ion-icon name="chevron-down-circle-outline"></ion-icon></button>  
+    
+                 <!-- responsive slider -->
+                 <!-- <div class="swiper product">
+                    <div class="swipper-wrapper">
+                      <div class="swiper-slide">Slide 1</div>
+                      <div class="swiper-slide">Slide 2</div>
+                      <div class="swiper-slide">Slide 3</div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination2"></div>
+                  
+                  </div> -->
+             
+
+
+                <div class="card-left">
+                <div class="main-image">
+                    <img id="mainimg1" src="">
+                    <img id="mainimg2" src="" alt="">
+                    <img id="mainimg3" src="" alt="">
+                    <img id="mainimg4" src="" alt="">
+                    <img id="mainimg5" src="" alt="">
+                    <img id="mainimg6" src="" alt="">
+                    <img id="mainimg7" src="" alt="">
+                </div>
+              
+                </div> 
+                
+                <div class="card-right">
+                </div>
+
+        </div>
+   
+                
+
+</div>
+           
     <div id="main-container">
         <div class="offer">
             <p>BUY 1 GET 1 FREE!</p>
@@ -1320,21 +1502,23 @@
                             alt="">
                     </div>
                 </div>
-                <div class="swiper-pagination">
+                <div class="swiper-pagination swiper-pagination1">
 
                 </div>
             </div>
+            
+    
         </section>
 
         <div class="choice">
-            <a href="" class="drop" data-aos="fade-left">NEW DROPS</a>
-            <a href="" class="flex" data-aos="fade-left">WINTER FLEX</a>
-            <a href="" class="trend" data-aos="fade-left">TRENDING</a>
+            <a href="" class="drop anchor" data-aos="fade-left">NEW DROPS</a>
+            <a href="" class="flex anchor" data-aos="fade-left">WINTER FLEX</a>
+            <a href="" class="trend anchor" data-aos="fade-left">TRENDING</a>
         </div>
         <div class="container">
             <div class="box" data-aos="fade-right" >
-                <img src="https://www.snitch.co.in/cdn/shop/files/4MSS2463-03-M26.jpg?v=1700573669&width=900" alt="">
-                <p>Wilder Brown Shirt</p>
+                <img data-id="1" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M31.jpg?v=1700573728&amp;width=1080" alt="">
+                <p>Wilder Navy Shirt</p>
                 <p>Rs. 1,299</p>
                 <button>S</button>
                 <button>M</button>
@@ -1343,9 +1527,9 @@
                 <button>XXL</button>
 
             </div>
-            <div class="box" data-aos="fade-right">
-                <img src="https://www.snitch.co.in/cdn/shop/files/4MSS2463-03-M26.jpg?v=1700573669&width=900" alt="">
-                <p>Wilder Brown Shirt</p>
+            <div  class="box" data-aos="fade-right">
+                <img data-id="2" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M26.jpg?v=1700573416&width=1800" alt="">
+                <p>Wilder White Shirt</p>
                 <p>Rs. 1,299</p>
                 <button>S</button>
                 <button>M</button>
@@ -1354,21 +1538,10 @@
                 <button>XXL</button>
 
             </div>
-            <div class="box" data-aos="fade-right" >
-                <img src="https://www.snitch.co.in/cdn/shop/files/4MSS2463-03-M26.jpg?v=1700573669&width=900" alt="">
-                <p>Wilder Brown Shirt</p>
-                <p>Rs. 1,299</p>
-                <button>S</button>
-                <button>M</button>
-                <button>L</button>
-                <button>Xl</button>
-                <button>XXL</button>
-
-            </div>
-            <div class="box" data-aos="fade-left">
-                <img src="https://www.snitch.co.in/cdn/shop/files/4MSS2463-03-M26.jpg?v=1700573669&width=900" alt="">
-                <p>Wilder Brown Shirt</p>
-                <p>Rs. 1,299</p>
+            <div  class="box" data-aos="fade-right" >
+                <img data-id="3" src="//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M33.jpg?v=1703677941&width=1800" alt="">
+                <p>Nector White Hakoba Shirt</p>
+                <p>Rs. 999</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -1377,9 +1550,20 @@
 
             </div>
             <div class="box" data-aos="fade-left">
-                <img src="https://www.snitch.co.in/cdn/shop/files/4MSS2463-03-M26.jpg?v=1700573669&width=900" alt="">
-                <p>Wilder Brown Shirt</p>
-                <p>Rs. 1,299</p>
+                <img data-id="4" src="//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M41.jpg?v=1703677987&width=1800" alt="">
+                <p>Nector Maroon Hakoba Shirt</p>
+                <p>Rs. 999</p>
+                <button>S</button>
+                <button>M</button>
+                <button>L</button>
+                <button>Xl</button>
+                <button>XXL</button>
+
+            </div>
+            <div class="box" data-aos="fade-left">
+                <img data-id="5" src="//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M37.jpg?v=1703678054&width=1800" alt="">
+                <p>Nector Navy Hakoba Shirt</p>
+                <p>Rs. 999</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -1458,6 +1642,7 @@
 
         </div>
 
+      
         <footer  data-aos="fade-up">
             <div class="foot-box">
                 <p class="caps">VISIT OFFLINE STORE</p>
@@ -2334,6 +2519,7 @@
 
 
     <script>
+        
         var lastscroll = 0;
         var nav = document.getElementById("nav");
 
@@ -2357,22 +2543,185 @@
         var sideBar = document.querySelector(".side-bar");
         var contain = document.getElementById("main-container");
         var list =document.querySelector(".list");
+
+        //product-detail 
         const products=document.querySelectorAll('.box');
         const modal=document.getElementById('product-detail');
         const closeBtn=document.getElementById('close');
+        
         closeBtn.addEventListener('click',()=>{
             modal.classList.remove('active')
             document.body.classList.remove('active');
-
+          
         });
+        // modal.addEventListener('click',()=>{
+        //     modal.classList.remove('active')
+        //     document.body.classList.remove('active');
+        // });
+       
         products.forEach(product=>{
             product.addEventListener('click',function (){
                 document.body.classList.add('active');
                 modal.classList.add('active');
                 
 
-            })
-        })
+            });
+        });
+
+
+//image for product detail
+const images=document.querySelectorAll('.image-select a');
+let imgId=1;
+
+
+//set image onclick
+
+const sliderImg=document.querySelectorAll('.box img');
+const img1=document.getElementById('img1')
+const img2=document.getElementById('img2')
+const img3=document.getElementById('img3')
+const img4=document.getElementById('img4')
+const img5=document.getElementById('img5')
+const img6=document.getElementById('img6')
+const img7=document.getElementById('img7')
+const mainimg1=document.getElementById('mainimg1')
+const mainimg2=document.getElementById('mainimg2')
+const mainimg3=document.getElementById('mainimg3')
+const mainimg4=document.getElementById('mainimg4')
+const mainimg5=document.getElementById('mainimg5')
+const mainimg6=document.getElementById('mainimg6')
+const mainimg7=document.getElementById('mainimg7')
+sliderImg.forEach(img=>{
+    img.addEventListener('click',()=>{ 
+    let id=img.dataset.id;
+    let productImages=[{
+    id:1,
+    link1:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M31.jpg?v=1700573728&amp;width=1080",
+    link2:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M1.jpg?v=1700573728&width=1080",
+    link3:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M36.jpg?v=1700573728&width=1080",
+    link4:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M40.jpg?v=1700573728&width=1080",
+    link5:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M11.jpg?v=1700573728&width=1080",
+    link6:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M17.jpg?v=1700573728&width=1080",
+    link7:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080"
+
+},
+{id:2,
+    link1:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M26.jpg?v=1700573416&width=1800",
+    link2:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M2.jpg?v=1700573416&width=1800",
+    link3:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M24_4c76e947-63cf-4305-8c49-cc3b04d9646a.jpg?v=1700573416&width=1800",
+    link4:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M40.jpg?v=1700573416&width=1800",
+    link5:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M8.jpg?v=1700573416&width=1800",
+    link6:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M18.jpg?v=1700573416&width=1800",
+    link7:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M4.jpg?v=1700573416&width=1800"
+},
+{id:3,
+    link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M33.jpg?v=1703677941&width=1800",
+    link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M21.jpg?v=1703677941&width=1800",
+    link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M27.jpg?v=1703677941&width=1800",
+    link4:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M40.jpg?v=1703677941&width=1800",
+    link5:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M15.jpg?v=1703677941&width=1800",
+    link6:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M9.jpg?v=1703677941&width=1800",
+    link7:"//www.snitch.co.in/cdn/shop/files/chemical-free-tag-final_b2746a90-7289-44d0-aa4c-89dc8e0cafa9.jpg?v=1703677941&width=1800"
+},
+{id:4,
+    link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M41.jpg?v=1703677987&width=1800",
+    link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M2.jpg?v=1703677987&width=1800",
+    link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M26.jpg?v=1703677987&width=1800",
+    link4:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M36.jpg?v=1703677987&width=1800",
+    link5:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M7.jpg?v=1703677987&width=1800",
+    link6:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M17.jpg?v=1703677987&width=1800",
+    link7:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M4.jpg?v=1703677987&width=1800"
+},
+{id:5,
+    link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M37.jpg?v=1703678054&width=1800",
+    link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M5.jpg?v=1703678069&width=1800",
+    link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M23.jpg?v=1703678069&width=1800",
+    link4:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M16.jpg?v=1703678069&width=1800",
+    link5:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M19.jpg?v=1703678069&width=1800",
+    link6:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M4.jpg?v=1703678069&width=1800",
+    link7:"//www.snitch.co.in/cdn/shop/files/chemical-free-tag-final_93ffa203-f9df-4317-8638-104c7fab6980.jpg?v=1703678069&width=1800"
+}
+];
+let prodId=productImages.filter(name=>{
+    if(name.id==id){
+        
+        img1.src=name.link1;
+        img2.src=name.link2;
+        img3.src=name.link3;
+        img4.src=name.link4;
+        img5.src=name.link5;
+        img6.src=name.link6;
+        img7.src=name.link7;
+        mainimg1.src=name.link1;
+        mainimg2.src=name.link2;
+        mainimg3.src=name.link3;
+        mainimg4.src=name.link4;
+        mainimg5.src=name.link5;
+        mainimg6.src=name.link6;
+        mainimg7.src=name.link7;
+    }
+})
+
+}); });
+
+             
+      
+//click to next and previous
+
+const nextBtn=document.getElementById('next');
+const prevBtn=document.getElementById('prev');
+
+const displayImage=document.querySelectorAll('.main-image img');
+const imgFrame=document.querySelector('.main-image');
+var cnt=1;
+var width=1;
+nextBtn.addEventListener('click',()=>{
+    if(cnt>=5){
+        cnt=0;
+    }
+    Width=cnt*300;
+   imgFrame.style.transform=`translateX(-${Width}px)`;
+   
+   cnt++;
+
+    
+});
+
+prevBtn.addEventListener('click',()=>{
+Width=Width-300;
+
+imgFrame.style.transform=`translateX(-${Width}px)`;
+cnt--;
+if(cnt<0){
+        cnt=5;
+    }
+        
+   
+});
+
+
+
+images.forEach(img=>{
+    
+    img.addEventListener('click',(e)=>{
+        e.preventDefault();
+        imgId=img.dataset.id;
+        moveImage();
+        
+       
+        
+    });
+});
+function moveImage(){
+    const display=document.querySelector('.main-image img:first-child').clientWidth;
+    let width=(imgId-1)*display;
+    const imgFrame=document.querySelector('.main-image');
+    imgFrame.style.transform=`translateX(-${width}px)`;
+    
+}
+
+
+
         burger.addEventListener("click", () => {
             window.scrollTo(0, 0); 
             sideBar.classList.toggle('slide');
@@ -2391,6 +2740,8 @@
         
 
     </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
 
     </script>
@@ -2402,10 +2753,23 @@
                 delay: 2500
             },
             pagination: {
-                el: ".swiper-pagination",
+                el: ".swiper-pagination1",
                 clickable: true,
             },
         });
+        // var product = new Swiper(".product", {
+        //     slidesPerView: "auto",
+        //     spaceBetween: 30,
+        //     autoplay: {
+        //         delay: 2500
+        //     },
+        //     pagination: {
+        //         el: ".swiper-pagination2",
+        //         clickable: true,
+        //     },
+        // });
+        // console.log(product);
+        
     </script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
