@@ -46,6 +46,7 @@
     .slide{
       min-width: 100%;
       height: 100%;
+      display: none;
       
     }
     .slide img{
@@ -54,6 +55,11 @@
             display: block;
             object-fit: contain;
       
+    }
+    @media (max-width:600px) {
+      .slide{
+        display: flex;
+      }
     }
   </style>
 </head>

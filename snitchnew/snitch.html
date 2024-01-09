@@ -23,9 +23,17 @@
         #main-container {
             min-height: 100%;
             max-width: 100%;
-            z-index: 8;
+            /* z-index: 8; */
             overflow: hidden;
            
+        }
+        #main-container.active{
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            filter: blur(5px);
+            transition: .5s all ease ;
         }
 
         .offer {
@@ -121,20 +129,64 @@
                 margin-bottom: 50px;
             }
 
-            .image-select{
+            .select-gallery .image-select{
                 display: none;
             }
             .card-left .main-image{
                 display: none;
                 
             }
-            .product-card button{
+            .product-card #next,#prev{
                 display: none;
             }
-          
+
+            /*responsive slider*/
+            .product-card{
+                overflow: hidden;
+                flex-direction: column;
+                justify-content: start;
+                
+            }
+            .slider{
+                display: flex;
+            }
+            .pagination{
+                display: flex;
+            }
+        
    
         }
         
+        .slider{
+                display: flex;
+        width:100%;
+        height:70%;
+       
+        transition: all .5s ease;
+       }
+       .pagination{
+        margin-top: 5px;
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        justify-content: center;
+       }
+      
+    .slide{
+      min-width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .slide img{
+      width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+      
+    }
+    .pagination input[type='radio']:checked{
+        accent-color: black !important;
+    }
         header {
             max-height: 100px;
             width: 100dvw;
@@ -330,7 +382,7 @@
             opacity: 0.5;
             left: -700px;
             transition: .6s;
-            transition: 1s all ease-in-out;
+            transition: 0.5s all ease-in-out;
         }
 
         .side-bar .box-1 {
@@ -362,7 +414,7 @@
             align-items: flex-start;
             margin-top: 20px;
             padding-bottom: 10px;
-            transition: 2s all ease;
+            transition: 0.5s all ease-in-out;
             transform: translateY(-500px);
             opacity: 0;
         }
@@ -377,12 +429,14 @@
             border-bottom: 0.5px solid grey;
             padding: 20px 0px;
             width: 90%;
-           transition:transform 0.5s ease;
+            transition: 0.5s all ease-in-out;
            
             font-weight: bold;
         }
         .listactive{
             transform: translateY(0px);
+            transition: 0.5s transform ease-in-out;
+
             opacity: 1;
         }
 
@@ -420,7 +474,7 @@
 
         }
 
-        .slide {
+        .sliding {
 
             left: 0;
             opacity: 1;
@@ -428,7 +482,7 @@
 
         }
 
-        .active {
+        body.active {
            
             position: fixed;
         }
@@ -585,7 +639,7 @@
         width: 100dvw;
         background: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(15px);
-        z-index: 999;
+        z-index: 300;
         position: fixed;
        inset: 0;
        display: none;
@@ -598,20 +652,21 @@
         
        }
        #product-detail .close{
-        display: flex;
-        justify-content: flex-end;
-       position: fixed;
-       top: 30px;
-        right: 135px;
-        padding: 0;
         
+
+       position: absolute;
+       top: 30px;
+        right: 70px;
+        padding: 0;
+        width: 10px;
        }
        .close button{
         background:none;
         border: none;
+        
        }
        button ion-icon{
-        font-size: 20px;
+        font-size: 30px;
         font-weight: bold;
        }
        .product-card{
@@ -622,9 +677,9 @@
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         display: flex;
-        
+        position: relative;
         align-items: start;
-    
+        z-index: 500;
        }
        .card-left{
         width: 300px;
@@ -685,33 +740,34 @@
             border: 1px solid black;
     
            }
-           .product-card button{
+           .product-card #prev,#next{
             width: 100px;
-            position: fixed;
+            position: absolute;
             background: white;
             border: none;
             
            }
            #prev{
-            top: 25px;
+            top: 0;
            }
            #next{
-            bottom: 25px;
+            bottom: 0;
            }
-           .select-gallery button ion-icon{
+        #next ion-icon,#prev ion-icon{
             font-size: 40px;
            }
 
-        
+       
     </STYLE>
 </head>
 
 <body>
     <div id="product-detail">
-        <div class="close">
-            <button id="close"><ion-icon name="close-outline"></ion-icon></button>
-        </div>
+      
         <div class="product-card">
+                <div class="close">
+                    <button id="close"><ion-icon name="close-outline"></ion-icon></button>
+                </div>
                 <button id="prev"><ion-icon name="chevron-up-circle-outline"></ion-icon></button>
                 <div class="select-gallery">
                     
@@ -746,15 +802,45 @@
                 <button id="next"><ion-icon name="chevron-down-circle-outline"></ion-icon></button>  
     
                  <!-- responsive slider -->
-                 <!-- <div class="swiper product">
-                    <div class="swipper-wrapper">
-                      <div class="swiper-slide">Slide 1</div>
-                      <div class="swiper-slide">Slide 2</div>
-                      <div class="swiper-slide">Slide 3</div>
+                 <div class="slider">
+                    
+                    <div class="slide">
+                      <img id="img1"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080">
                     </div>
-                    <div class="swiper-pagination swiper-pagination2"></div>
-                  
-                  </div> -->
+                    <div class="slide">
+                   <img id="img2"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M1.jpg?v=1700573728&width=1080" alt="">
+                    </div>
+                    <div class="slide">
+                       <img id="img3"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                    </div>
+                    <div class="slide">
+                        <img id="img4" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                    </div>
+                    <div class="slide">
+                        <img id="img5" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                    </div>
+                    <div class="slide">
+                      <img id="img6"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                    </div>
+                    <div class="slide">
+                        <img id="img7" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                    </div>  
+                    
+                     
+                       
+                   
+                
+                    
+                </div>
+                <div class="pagination">
+                  <input type="radio" name="page" data-id="1">
+                  <input type="radio" name="page" data-id="2">
+                  <input type="radio" name="page" data-id="3">
+                  <input type="radio" name="page" data-id="4">
+                  <input type="radio" name="page" data-id="5">
+                  <input type="radio" name="page" data-id="6">
+                  <input type="radio" name="page" data-id="7">
+                </div>
              
 
 
@@ -1475,15 +1561,15 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide"><img 
-                            src="buy_1_get_1.png"
+                            src="//www.snitch.co.in/cdn/shop/files/buy-1-get-1-perfume_1_1400x.webp?v=1701238724"
                             alt="">
                     </div>
                     <div class="swiper-slide"><img
-                            src="40_off_banner_for_app_400x.png"
+                            src="//www.snitch.co.in/cdn/shop/files/Price_Drop_900_x_150_px_5f6ff884-08ab-4a98-9da1-ae1eb7e5fc5a.png?v=1704112058&width=1600"
                             alt="">
                     </div>
                     <div class="swiper-slide"><img
-                            src="40_off_banner_for_app_400x.png"
+                            src="//www.snitch.co.in/cdn/shop/files/Price_Drop_900_x_150_px_1.png?v=1703833895&width=1600"
                             alt="">
                     </div>
                     <div class="swiper-slide"><img
@@ -2535,11 +2621,7 @@
 
         //side-bar
 
-        var burger = document.getElementById("burger");
-        var back = document.getElementById("back");
-        var sideBar = document.querySelector(".side-bar");
-        var contain = document.getElementById("main-container");
-        var list =document.querySelector(".list");
+       
 
         //product-detail 
         const products=document.querySelectorAll('.box');
@@ -2551,20 +2633,21 @@
             document.body.classList.remove('active');
           
         });
-        // modal.addEventListener('click',()=>{
-        //     modal.classList.remove('active')
-        //     document.body.classList.remove('active');
-        // });
+       
        
         products.forEach(product=>{
             product.addEventListener('click',function (){
                 document.body.classList.add('active');
                 modal.classList.add('active');
+              
                 
 
             });
         });
-
+        // modal.addEventListener('click',()=>{
+        //     modal.classList.remove('active')
+        //     document.body.classList.remove('active');
+        // });
 
 //image for product detail
 const images=document.querySelectorAll('.image-select a');
@@ -2709,6 +2792,25 @@ images.forEach(img=>{
         
     });
 });
+
+
+// responsive slider
+const pagination=document.querySelectorAll('.pagination input');
+  let radioId=1;
+  pagination.forEach(radio=>{
+    radio.addEventListener('click',()=>{
+      
+      radioId=radio.dataset.id;
+      moveSlideImage();
+    });
+  });
+  function moveSlideImage(){
+    const display=document.querySelector('.slide img:first-child').clientWidth;
+    let width=(radioId-1)*display;
+    const imgFrame=document.querySelector('.slider');
+    imgFrame.style.transform=`translateX(-${width}px)`;
+  }
+
 function moveImage(){
     const display=document.querySelector('.main-image img:first-child').clientWidth;
     let width=(imgId-1)*display;
@@ -2717,21 +2819,28 @@ function moveImage(){
     
 }
 
+var burger = document.getElementById("burger");
+        var back = document.getElementById("back");
+        var sideBar = document.querySelector(".side-bar");
+        var contain = document.getElementById("main-container");
+        var list =document.querySelector(".list");
 
 
         burger.addEventListener("click", () => {
             window.scrollTo(0, 0); 
-            sideBar.classList.toggle('slide');
+            sideBar.classList.toggle('sliding');
             contain.classList.toggle("active");
             list.classList.add("listactive");
+           
 
-        })
+        });
+        
         back.addEventListener("click", () => {
             back.classList.add('rotate');
-            sideBar.classList.remove('slide');
+            sideBar.classList.remove('sliding');
             contain.classList.remove("active");
             list.classList.remove("listactive");
-
+            
         })
 
         
@@ -2754,18 +2863,7 @@ function moveImage(){
                 clickable: true,
             },
         });
-        // var product = new Swiper(".product", {
-        //     slidesPerView: "auto",
-        //     spaceBetween: 30,
-        //     autoplay: {
-        //         delay: 2500
-        //     },
-        //     pagination: {
-        //         el: ".swiper-pagination2",
-        //         clickable: true,
-        //     },
-        // });
-        // console.log(product);
+       
         
     </script>
       <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
