@@ -25,6 +25,7 @@
             max-width: 100%;
             z-index: 8;
             overflow: hidden;
+            scroll-behavior: smooth;
            
         }
 
@@ -2686,7 +2687,6 @@ nextBtn.addEventListener('click',()=>{
 
 prevBtn.addEventListener('click',()=>{
 Width=Width-300;
-
 imgFrame.style.transform=`translateX(-${Width}px)`;
 cnt--;
 if(cnt<0){
