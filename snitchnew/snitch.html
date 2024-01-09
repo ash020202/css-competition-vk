@@ -51,6 +51,12 @@
         .offer a {
             color: white;
         }
+        .slider{
+            display: none;
+        }
+        .pagination{
+            display: none;
+        }
 
         @media (max-width:600px) {
             .offer {
@@ -150,23 +156,13 @@
             }
             .slider{
                 display: flex;
-            }
-            .pagination{
-                display: flex;
-            }
-        
-   
-        }
-        
-        .slider{
-                display: flex;
         width:100%;
         height:70%;
        
         transition: all .5s ease;
        }
        .pagination{
-        margin-top: 5px;
+        margin-top: 2px;
         display: flex;
         width: 100%;
         gap: 8px;
@@ -188,6 +184,13 @@
     .pagination input[type='radio']:checked{
         accent-color: black !important;
     }
+          
+        
+   
+        }
+       
+        
+       
         header {
             max-height: 100px;
             width: 100dvw;
@@ -806,25 +809,25 @@
                  <div class="slider">
                     
                     <div class="slide">
-                      <img id="img1"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080">
+                      <img id="mobimg1"  src="">
                     </div>
                     <div class="slide">
-                   <img id="img2"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M1.jpg?v=1700573728&width=1080" alt="">
+                   <img id="mobimg2"  src="" alt="">
                     </div>
                     <div class="slide">
-                       <img id="img3"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                       <img id="mobimg3"  src="" alt="">
                     </div>
                     <div class="slide">
-                        <img id="img4" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                        <img id="mobimg4" src="" alt="">
                     </div>
                     <div class="slide">
-                        <img id="img5" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                        <img id="mobimg5" src="" alt="">
                     </div>
                     <div class="slide">
-                      <img id="img6"  src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                      <img id="mobimg6"  src="" alt="">
                     </div>
                     <div class="slide">
-                        <img id="img7" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M3.jpg?v=1700573728&width=1080" alt="">
+                        <img id="mobimg7" src="" alt="">
                     </div>  
                     
                      
@@ -2672,10 +2675,14 @@ const mainimg4=document.getElementById('mainimg4')
 const mainimg5=document.getElementById('mainimg5')
 const mainimg6=document.getElementById('mainimg6')
 const mainimg7=document.getElementById('mainimg7')
-sliderImg.forEach(img=>{
-    img.addEventListener('click',()=>{ 
-    let id=img.dataset.id;
-    let productImages=[{
+const mobimg1=document.getElementById('mobimg1');
+const mobimg2=document.getElementById('mobimg2');
+const mobimg3=document.getElementById('mobimg3');
+const mobimg4=document.getElementById('mobimg4');
+const mobimg5=document.getElementById('mobimg5');
+const mobimg6=document.getElementById('mobimg6');
+const mobimg7=document.getElementById('mobimg7');
+const productImages=[{
     id:1,
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M31.jpg?v=1700573728&amp;width=1080",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M1.jpg?v=1700573728&width=1080",
@@ -2723,6 +2730,10 @@ sliderImg.forEach(img=>{
     link7:"//www.snitch.co.in/cdn/shop/files/chemical-free-tag-final_93ffa203-f9df-4317-8638-104c7fab6980.jpg?v=1703678069&width=1800"
 }
 ];
+sliderImg.forEach(img=>{
+    img.addEventListener('click',()=>{ 
+    let id=img.dataset.id;
+   
 let prodId=productImages.filter(name=>{
     if(name.id==id){
         
@@ -2740,6 +2751,14 @@ let prodId=productImages.filter(name=>{
         mainimg5.src=name.link5;
         mainimg6.src=name.link6;
         mainimg7.src=name.link7;
+        mobimg1.src=name.link1;
+        mobimg2.src=name.link2;
+        mobimg3.src=name.link3;
+        mobimg4.src=name.link4;
+        mobimg5.src=name.link5;
+        mobimg6.src=name.link6;
+        mobimg7.src=name.link7;
+
     }
 })
 
