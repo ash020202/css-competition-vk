@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Discover Your Style - Snitch </title>
     <STYLE>
-        @import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Delicious+Handrawn&family=Inter:wght@300;400&family=Montserrat:wght@100;200;300&family=Poppins:ital,wght@0,200;0,400;0,500;1,100;1,600&family=Roboto+Condensed:wght@300&family=Roboto:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap');
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Montserrat;
+            font-family: 'Montserrat', sans-serif;
             scroll-behavior: smooth;
         }
     
@@ -58,137 +57,7 @@
             display: none;
         }
 
-        @media (max-width:600px) {
-            .offer {
-                flex-direction: column;
-                align-items: center;
-                width: 100vw;
-
-            }
-
-            header {
-                min-height: 65px;
-                position: relative;
-
-
-            }
-
-            header .snitch {
-                height: 30px !important;
-                width: 120px !important;
-
-                position: absolute;
-                left: -130px;
-            }
-
-            .icons {
-
-
-                position: absolute;
-                right: 30px;
-                height: 30%;
-                justify-content: center;
-            }
-
-            .burger {
-                position: absolute;
-                left: 20px;
-
-            }
-
-
-
-            .bottom-bar .el-box {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 2px;
-                background-color: #fff;
-            }
-
-            .bottom-bar {
-                min-height: 50px;
-                position: fixed;
-                bottom: 0;
-             
-
-            }
-
-            header #acc-ico,
-            #heart,
-            #wish {
-                display: none;
-            }
-
-
-            footer{
-                flex-direction: column;
-                align-items: center;
-            }
-            .foot-box{
-                width: 90%;
-                text-align: center;
-                border-bottom: 0.2px solid black;
-                padding-bottom: 10px;
-                
-            }
-            footer .foot-box:nth-child(5){
-                margin-bottom: 50px;
-            }
-
-            .select-gallery .image-select{
-                display: none;
-            }
-            .card-left .main-image{
-                display: none;
-                
-            }
-            .product-card #next,#prev{
-                display: none;
-            }
-
-            /*responsive slider*/
-            .product-card{
-                overflow: hidden;
-                flex-direction: column;
-                justify-content: start;
-                
-            }
-            .slider{
-                display: flex;
-        width:100%;
-        height:70%;
-       
-        transition: all .5s ease;
-       }
-       .pagination{
-        margin-top: 2px;
-        display: flex;
-        width: 100%;
-        gap: 8px;
-        justify-content: center;
-       }
       
-    .slide{
-      min-width: 100%;
-      height: 100%;
-      overflow: hidden;
-    }
-    .slide img{
-      width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: contain;
-      
-    }
-    .pagination input[type='radio']:checked{
-        accent-color: black !important;
-    }
-          
-        
-   
-        }
-       
         
        
         header {
@@ -659,10 +528,11 @@
         
 
        position: absolute;
-       top: 30px;
-        right: 70px;
+       top: 20px;
+        right: 50px;
         padding: 0;
         width: 10px;
+        z-index: 600;
        }
        .close button{
         background:none;
@@ -675,14 +545,14 @@
        }
        .product-card{
         
-        height: 500px;
+        height:80%;
         width: 80%;
         background-color: white;
         border-radius: 10px;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
         display: flex;
         position: relative;
-        align-items: start;
+        align-items: center;
         z-index: 500;
        }
        .card-left{
@@ -692,7 +562,7 @@
         overflow: hidden;
         display: flex;
         justify-content: space-evenly;
-    
+        
         
         
        }
@@ -701,7 +571,6 @@
             height: 100%;
             display: block;
             object-fit: cover;
-
        }
        .main-image{
         width: 100%;
@@ -709,7 +578,8 @@
         display: flex;
        
         transition:all .5s ease;
-       /* transform: translateX(30px); */
+       /* transform: translateX(-220px); */
+      
        }
        .select-gallery{
         width:100px;
@@ -726,7 +596,7 @@
        
        ::-webkit-scrollbar{
         width: 2px;
-        background: none;
+        background:none;
         
        }
        .image-select{
@@ -745,7 +615,7 @@
     
            }
            .product-card #prev,#next{
-            width: 100px;
+            width: 7%;
             position: absolute;
             background: white;
             border: none;
@@ -759,8 +629,262 @@
            }
         #next ion-icon,#prev ion-icon{
             font-size: 40px;
+           
+           }
+           .product-card .card-right{
+            width: 100%;
+            height: 100%;
+            overflow-y: scroll;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            position: relative;
+        
+           }
+           .card-right .shirt-detail{
+           width: 60%;
+            /* border-bottom: 1px solid grey; */
+         
+            padding:20px 0px 10px 20px;
+            
+            
+           }
+           .shirt-detail #shirt-name{
+            font-weight: bolder;
+            font-size: 30px;
+            padding-bottom: 10px;
+           }
+           #shirt-name ~ p{
+            letter-spacing: 5px;
+           }
+           .shirt-detail p{
+            
+            font-weight: 400;
+            line-height: 30px;
+           }
+           .select-size{
+            padding: 20px;
+           }
+           .select-size a{
+            text-decoration: none;
+            color: black;
+            font-weight: 200;
+            padding: 10px;
+            border: 1.5px solid #eaeae4;
+            
+           }
+           .select-size a:focus{
+            border: 2px solid black;
+           }
+           .select-size p{
+            letter-spacing: 5px;
+            padding-bottom: 20px;
+           }
+           .card-right hr{
+            width: 70%;
+            margin-left: 20px;
+           }
+           .quantity{
+            margin-left: 20px;
+            width: 100px;
+            
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1.5px solid #eaeae4;
+           }
+           .quantity button{
+            padding: 5px 8px;
+            background: none;
+            border: none;
+           }
+           .quantity button:hover{
+            background-color: #eaeae4;
+           }
+           .quantity button ion-icon{
+            font-size:18px;
+            display: block;
+           }
+           .quan{
+            letter-spacing: 5px;
+            padding:0px 0px 10px 20px;
+           }
+           .shirt-quantity{
+            
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+           }
+           .quantity-box{
+            display: flex;
+            flex-direction: column;
+           }
+           .card-right #add-cart{
+            background-color: black;
+            color: white;
+            font-weight: 400;
+            letter-spacing: 5px;
+            padding: 20px 10px;
+            width: 100%;
+            border: none;
+            
+                     
+           }
+           .shirt-desc{
+            text-align: justify;
+            padding: 20px;
            }
 
+           @media (max-width:600px) {
+            .offer {
+                flex-direction: column;
+                align-items: center;
+                width: 100vw;
+
+            }
+
+            header {
+                min-height: 65px;
+                position: relative;
+
+
+            }
+
+            header .snitch {
+                height: 30px !important;
+                width: 120px !important;
+
+                position: absolute;
+                left: -130px;
+            }
+
+            .icons {
+
+
+                position: absolute;
+                right: 30px;
+                height: 30%;
+                justify-content: center;
+            }
+
+            .burger {
+                position: absolute;
+                left: 20px;
+
+            }
+
+
+
+            .bottom-bar .el-box {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2px;
+                background-color: #fff;
+            }
+
+            .bottom-bar {
+                min-height: 50px;
+                position: fixed;
+                bottom: 0;
+             
+
+            }
+
+            header #acc-ico,
+            #heart,
+            #wish {
+                display: none;
+            }
+
+
+            footer{
+                flex-direction: column;
+                align-items: center;
+            }
+            .foot-box{
+                width: 90%;
+                text-align: center;
+                border-bottom: 0.2px solid black;
+                padding-bottom: 10px;
+                
+            }
+            footer .foot-box:nth-child(5){
+                margin-bottom: 50px;
+            }
+
+            .select-gallery .image-select{
+                display: none;
+            }
+            
+            .card-left .main-image{
+                display: none;
+                
+            }
+            .product-card #next,#prev{
+                display: none;
+            }
+
+            /*responsive slider*/
+               .product-card{
+                height:100%;
+                overflow-x: hidden;
+              
+                flex-direction: column;
+                justify-content: flex-start;
+                padding: 0;
+                
+                
+            }
+            .card-left{
+                height: 0%;
+            }
+            .select-gallery{
+                height: 0%;
+            }
+            .slider{
+                display: flex;
+        width:100%;
+        height:50%;
+        transition: all .5s ease;
+        
+       }
+       .pagination{
+        margin-top: 2px;
+        display: flex;
+        width: 100%;
+        gap: 8px;
+        justify-content: center;
+       
+       }
+      
+    .slide{
+        
+      min-width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .slide img{
+      width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: contain;
+      
+    }
+    .pagination input[type='radio']:checked{
+        accent-color: black !important;
+    }
+    .product-card .close{
+        right: 0px;
+    }
+    .card-right #add-cart{
+        position: sticky;
+            bottom: 0; 
+    }
+          
+        
+   
+        }
        
     </STYLE>
 </head>
@@ -845,9 +969,6 @@
                   <input type="radio" name="page" data-id="6">
                   <input type="radio" name="page" data-id="7">
                 </div>
-             
-
-
                 <div class="card-left">
                 <div class="main-image">
                     <img id="mainimg1" src="">
@@ -860,8 +981,44 @@
                 </div>
               
                 </div> 
-                
                 <div class="card-right">
+                    <div class="shirt-detail">
+                        <p id="shirt-name">Wilder Navy Shirt</p>
+                        <p>Rs. 1,299</p>
+                        <p>(incl. of all taxes)</p>
+                    </div>
+                    <hr>
+                    <div class="shirt-quantity">
+                        <div class="select-size">
+                            <p>Select Size</p>
+                            <a href="#">S</a>
+                            <a href="#">M</a>
+                            <a href="#">L</a>
+                            <a href="#">XL</a>
+                            <a href="#">XXL</a>
+                        </div>
+                       <div class="quantity-box">
+                        <p class="quan">Quantity</p>
+                        <div class="quantity">
+                            
+                            <button class="minus"><ion-icon name="add-outline"></ion-icon></button>
+                            <p id="prod-quantity">1</p>
+                            <button class="plus"><ion-icon name="remove-outline"></ion-icon></button>
+    
+                        </div>
+
+                       </div>
+                       <div class="shirt-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quidem ipsum provident alias. In dolor itaque labore deserunt iusto. Tempore quaerat commodi odio placeat cum libero deserunt. Quia, quis.
+                        Consectetur dicta odio fugit, repellendus deleniti quam at repellat incidunt earum voluptatem labore consequatur unde iste, modi dolor maiores officiis numquam laboriosam voluptatum, aperiam eos. Voluptates dolore minima autem veniam?
+                        Libero modi amet nisi quisquam enim, dignissimos quibusdam repellat, labore necessitatibus velit praesentium illo omnis, minus placeat. Repellat illum cupiditate quam facilis, magni molestias placeat vitae voluptatem quaerat recusandae consequuntur?
+                        Rem porro qui vero, voluptatum ex quibusdam autem saepe odit voluptatibus perferendis omnis eius totam laborum odio amet in corrupti numquam quam minus nisi deleniti! Excepturi totam dignissimos consequuntur dolor?
+                        Quisquam perspiciatis voluptatibus quibusdam est error doloribus harum. Nemo saepe ad facere incidunt quos tenetur maiores quae animi eligendi laborum! Beatae, quam debitis? Beatae cum vitae, sequi labore ex maxime.
+                       </div>
+
+                    </div>
+                   
+                    <button id="add-cart">Add to Cart</button>
                 </div>
 
         </div>
@@ -2631,10 +2788,10 @@
         const products=document.querySelectorAll('.box');
         const modal=document.getElementById('product-detail');
         const closeBtn=document.getElementById('close');
-        
         closeBtn.addEventListener('click',()=>{
             modal.classList.remove('active')
             document.body.classList.remove('active');
+            
           
         });
        
@@ -2780,6 +2937,7 @@ nextBtn.addEventListener('click',()=>{
         cnt=0;
     }
     Width=cnt*300;
+    
    imgFrame.style.transform=`translateX(-${Width}px)`;
    
    cnt++;
@@ -2791,7 +2949,7 @@ prevBtn.addEventListener('click',()=>{
 Width=Width-300;
 imgFrame.style.transform=`translateX(-${Width}px)`;
 cnt--;
-if(cnt<0){
+if(cnt<=0){
         cnt=5;
     }
         
