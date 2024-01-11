@@ -557,8 +557,7 @@
        }
        .card-left{
         width: 300px;
-        
-        height: 100%;
+                height: 100%;
         overflow: hidden;
         display: flex;
         justify-content: space-evenly;
@@ -573,12 +572,13 @@
             object-fit: cover;
        }
        .main-image{
-        width: 100%;
+       width: 100%;
+       /* max-width: 300px; */
        
         display: flex;
        
         transition:all .5s ease;
-       /* transform: translateX(-220px); */
+       /* transform: translateX(-390px); */
       
        }
        .select-gallery{
@@ -727,12 +727,40 @@
             padding: 20px 10px;
             width: 100%;
             border: none;
-            
+            position: sticky;
+            bottom: 0;
                      
            }
            .shirt-desc{
             text-align: justify;
             padding: 20px;
+           }
+           .cart-modal{
+            position: fixed;
+            right: -400px;
+            top: 0;
+            z-index: 999;
+            width: 400px;
+            height: 100dvh;
+            background-color: white;
+            transition: 0.3s ease-out;
+
+           }
+           .cart-modal.active{
+            transition: 0.3s;
+            right: 0;
+           }
+           .cart-container{
+            padding: 30px;
+           }
+           .cart-container .title{
+            
+            border-bottom: 1px solid #eaeae4;
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding-bottom: 20px;
            }
 
            @media (max-width:600px) {
@@ -881,8 +909,7 @@
         position: sticky;
             bottom: 0; 
     }
-          
-        
+
    
         }
        
@@ -983,8 +1010,8 @@
                 </div> 
                 <div class="card-right">
                     <div class="shirt-detail">
-                        <p id="shirt-name">Wilder Navy Shirt</p>
-                        <p>Rs. 1,299</p>
+                        <p id="shirt-name"></p>
+                        <p id="shirt-price"></p>
                         <p>(incl. of all taxes)</p>
                     </div>
                     <hr>
@@ -1000,22 +1027,27 @@
                        <div class="quantity-box">
                         <p class="quan">Quantity</p>
                         <div class="quantity">
-                            
-                            <button class="minus"><ion-icon name="add-outline"></ion-icon></button>
-                            <p id="prod-quantity">1</p>
                             <button class="plus"><ion-icon name="remove-outline"></ion-icon></button>
+                            <p id="prod-quantity">1</p>
+                            <button class="minus"><ion-icon name="add-outline"></ion-icon></button>
+
+                            
     
                         </div>
 
                        </div>
                        <div class="shirt-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt suscipit quidem ipsum provident alias. In dolor itaque labore deserunt iusto. Tempore quaerat commodi odio placeat cum libero deserunt. Quia, quis.
-                        Consectetur dicta odio fugit, repellendus deleniti quam at repellat incidunt earum voluptatem labore consequatur unde iste, modi dolor maiores officiis numquam laboriosam voluptatum, aperiam eos. Voluptates dolore minima autem veniam?
-                        Libero modi amet nisi quisquam enim, dignissimos quibusdam repellat, labore necessitatibus velit praesentium illo omnis, minus placeat. Repellat illum cupiditate quam facilis, magni molestias placeat vitae voluptatem quaerat recusandae consequuntur?
-                        Rem porro qui vero, voluptatum ex quibusdam autem saepe odit voluptatibus perferendis omnis eius totam laborum odio amet in corrupti numquam quam minus nisi deleniti! Excepturi totam dignissimos consequuntur dolor?
-                        Quisquam perspiciatis voluptatibus quibusdam est error doloribus harum. Nemo saepe ad facere incidunt quos tenetur maiores quae animi eligendi laborum! Beatae, quam debitis? Beatae cum vitae, sequi labore ex maxime.
-                       </div>
-
+                       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae expedita rerum recusandae consequatur pariatur cumque asperiores consectetur dolore repellat, autem, inventore eligendi veritatis? Ad necessitatibus sequi dolorum animi ipsum delectus.
+                       Reprehenderit, necessitatibus? Tempore eius perferendis quae in? A nihil facilis excepturi molestiae ad exercitationem explicabo vero rem rerum cupiditate laboriosam sint soluta, ullam harum, consequuntur sit animi accusamus, praesentium tempora!
+                       Aut laborum itaque voluptatem quam enim ea non, consequatur reiciendis iure optio modi odit hic blanditiis magni sapiente aperiam quidem, est molestiae maiores, libero accusantium maxime dolore sequi? Rerum, asperiores?
+                       Error itaque, fugiat hic praesentium perspiciatis iure. Incidunt cupiditate quis quam, fugit in mollitia asperiores laborum aliquid dignissimos iste iusto iure suscipit ullam atque maiores consequuntur, reprehenderit illum fugiat velit?
+                       Aliquam, hic pariatur consequatur sequi quo ipsa ab, officiis facilis doloribus ut dolore incidunt voluptate laborum iusto eius obcaecati asperiores! Sapiente aliquam animi iure itaque soluta, natus reiciendis delectus totam?
+                       Minus quas non maxime quasi? Quae consequatur voluptate accusantium praesentium porro ad temporibus vel enim, vero cupiditate tenetur, illum fugit adipisci, dolores maiores ipsa debitis aut voluptatibus! Enim, porro reprehenderit?
+                       Pariatur consectetur reprehenderit adipisci veniam accusantium temporibus, repellat iste quo quis ex nihil inventore sapiente eius est atque? Minima modi ullam nobis dolor, vel dolorum rerum architecto minus illum dolorem.
+                       Omnis, repellendus, error ratione itaque a architecto impedit reprehenderit aliquam praesentium obcaecati sequi maxime sit harum illum, officia eveniet facere laborum. Vel cum illum consequatur. Veritatis unde modi perferendis ab?
+                       Quasi dicta molestiae, sed deserunt maxime, excepturi nisi, ad placeat reprehenderit amet delectus similique in. Culpa eligendi aperiam nam at laboriosam totam error, officiis, hic delectus maiores architecto velit. Natus!
+                       Sapiente beatae consectetur autem reprehenderit architecto enim nobis sunt, eius mollitia ullam, perferendis odio provident, excepturi odit voluptates. Non quos distinctio labore libero necessitatibus, quam maiores et. Omnis, voluptas voluptatibus!</p>
+                    
                     </div>
                    
                     <button id="add-cart">Add to Cart</button>
@@ -1025,6 +1057,7 @@
    
                 
 
+</div>
 </div>
            
     <div id="main-container">
@@ -2759,6 +2792,21 @@
     </div>
 
 
+    <div class="cart-modal active">
+        <div class="cart-container">
+            <div> 
+                <div class="title">Cart</div>
+                <button id="close"><ion-icon name="close-outline"></ion-icon></button>
+            </div>
+            <div class="cart-item">
+                <img src="" alt="" srcset="">
+
+            </div>
+        </div>
+
+
+    </div>
+
 
 
 
@@ -2839,8 +2887,11 @@ const mobimg4=document.getElementById('mobimg4');
 const mobimg5=document.getElementById('mobimg5');
 const mobimg6=document.getElementById('mobimg6');
 const mobimg7=document.getElementById('mobimg7');
+const shirtName=document.getElementById('shirt-name');
+const shirtPrice=document.getElementById('shirt-price');
 const productImages=[{
     id:1,
+    Shirtname:'Wilder Navy Shirt',price:'Rs. 1,299',
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M31.jpg?v=1700573728&amp;width=1080",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M1.jpg?v=1700573728&width=1080",
     link3:"//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M36.jpg?v=1700573728&width=1080",
@@ -2851,6 +2902,7 @@ const productImages=[{
 
 },
 {id:2,
+    Shirtname:'Wilder White Shirt',price:'Rs. 1,299',
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M26.jpg?v=1700573416&width=1800",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M2.jpg?v=1700573416&width=1800",
     link3:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M24_4c76e947-63cf-4305-8c49-cc3b04d9646a.jpg?v=1700573416&width=1800",
@@ -2860,6 +2912,7 @@ const productImages=[{
     link7:"//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M4.jpg?v=1700573416&width=1800"
 },
 {id:3,
+    Shirtname:'Nector White Hakoba Shirt',price:'Rs. 999',
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M33.jpg?v=1703677941&width=1800",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M21.jpg?v=1703677941&width=1800",
     link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M27.jpg?v=1703677941&width=1800",
@@ -2869,6 +2922,7 @@ const productImages=[{
     link7:"//www.snitch.co.in/cdn/shop/files/chemical-free-tag-final_b2746a90-7289-44d0-aa4c-89dc8e0cafa9.jpg?v=1703677941&width=1800"
 },
 {id:4,
+    Shirtname:'Nector Maroon Hakoba Shirt',price:'Rs. 999',
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M41.jpg?v=1703677987&width=1800",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M2.jpg?v=1703677987&width=1800",
     link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M26.jpg?v=1703677987&width=1800",
@@ -2878,6 +2932,7 @@ const productImages=[{
     link7:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M4.jpg?v=1703677987&width=1800"
 },
 {id:5,
+    Shirtname:'Wilder Navy Shirt',price:'Rs. 1,299',
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M37.jpg?v=1703678054&width=1800",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M5.jpg?v=1703678069&width=1800",
     link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M23.jpg?v=1703678069&width=1800",
@@ -2915,7 +2970,8 @@ let prodId=productImages.filter(name=>{
         mobimg5.src=name.link5;
         mobimg6.src=name.link6;
         mobimg7.src=name.link7;
-
+        shirtName.innerHTML=name.Shirtname;
+        shirtPrice.innerHTML=name.price;
     }
 })
 
@@ -2927,26 +2983,30 @@ let prodId=productImages.filter(name=>{
 
 const nextBtn=document.getElementById('next');
 const prevBtn=document.getElementById('prev');
-
 const displayImage=document.querySelectorAll('.main-image img');
 const imgFrame=document.querySelector('.main-image');
+let frameWidth=imgFrame.scrollWidth;
 var cnt=1;
-var width=1;
+var Width=0;
 nextBtn.addEventListener('click',()=>{
+    let cardLeft=document.querySelector('.card-left').offsetWidth;
+
     if(cnt>=5){
         cnt=0;
     }
-    Width=cnt*300;
-    
+    Width=cnt*cardLeft;
    imgFrame.style.transform=`translateX(-${Width}px)`;
    
    cnt++;
+   
 
     
 });
 
 prevBtn.addEventListener('click',()=>{
-Width=Width-300;
+    let cardLeft=document.querySelector('.card-left').offsetWidth;
+
+Width=Width-cardLeft;
 imgFrame.style.transform=`translateX(-${Width}px)`;
 cnt--;
 if(cnt<=0){
@@ -2995,6 +3055,40 @@ function moveImage(){
     imgFrame.style.transform=`translateX(-${width}px)`;
     
 }
+
+
+//quantity increase and decrease
+
+let quantityValue=document.getElementById('prod-quantity');
+let inc=1;
+const minusBtn=document.querySelector('.minus');
+const plusBtn=document.querySelector('.plus');
+
+//decrease function
+minusBtn.addEventListener('click',()=>{
+   
+    if(inc>=1 && inc<5){
+        inc++;
+        quantityValue.innerHTML=inc;
+    }
+    else{
+        alert('Maximum Shirts Only');
+    }
+});
+
+//increase function
+
+plusBtn.addEventListener('click',()=>{
+    if(inc<=0){
+        inc=1;
+        quantityValue.innerHTML=inc;
+    }
+    else{
+        inc--;
+        quantityValue.innerHTML=inc;
+    }
+   
+});
 
 var burger = document.getElementById("burger");
         var back = document.getElementById("back");
