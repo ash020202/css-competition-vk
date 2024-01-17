@@ -744,6 +744,9 @@
             height: 100dvh;
             background-color: white;
             transition: 0.3s ease-out;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            
 
            }
            .cart-modal.active{
@@ -751,6 +754,10 @@
             right: 0;
            }
            .cart-container{
+            /* overflow-x: hidden;
+            overflow-y: scroll; */
+
+           
             padding: 20px;
 
            }
@@ -764,6 +771,11 @@
            
            }
            .cart-modal .cart-header{
+            background-color: white;
+
+           position: sticky;
+           top: 0;
+           z-index: 500;
             padding: 20px;
             border-bottom: 1px solid #eaeae4;
             width: 100%;
@@ -840,9 +852,9 @@
             .cart-quantity .shirt-price{
                 margin-top: 10px;
             }
-            .cart-item #cart-trash{
+            .cart-item .cart-trash{
                
-                font-size: 35px !important;
+                font-size: 15px !important;
                 text-align: center;
                 position: absolute;
                 right: -15px;
@@ -2957,7 +2969,7 @@ let imgId=1;
 
 //quantity increase and decrease
 const wishListBtn=document.getElementById('wish');
-const cartTrashBtn=document.querySelectorAll('.cart-trash');
+
 let quantityValue=document.getElementById('prod-quantity');
 let inc=1;
 const minusBtn=document.querySelectorAll('.minus');
@@ -2988,8 +3000,40 @@ let newElement=document.createElement('div');
 newElement.innerHTML=element;
 let cartcontainer=document.querySelector('.cart-container');
 cartcontainer.append(newElement);
-decrease();
-increase();
+let cartTrashBtn=document.querySelectorAll('.cart-trash');
+cartTrashBtn.forEach(btn=>{
+    btn.addEventListener('click',removeItem);
+});
+// let cartQuantity=document.getElementById('cart-quantity');
+// minusBtn.forEach(minBtn=>{
+//     minBtn.addEventListener('click',cartdecrease);
+// });
+// function cartdecrease(){
+//     if(inc<=0){
+//         console.log('decrease');
+//         inc=1;
+        
+ 
+//         cartQuantity.innerHTML=inc;
+//     }
+//         inc--;
+//         cartQuantity.innerHTML=inc;    
+// }
+// plusBtn.forEach(pBtn=>{
+//     pBtn.addEventListener('click',cartincrease);
+
+// })
+// function cartincrease(){
+   
+//    inc++;
+//    cartQuantity.innerHTML=inc;
+//    if(inc>=5){
+//   alert('Maximum 5 Shirts Only')
+//   cartQuantity.innerHTML=inc;
+// }
+
+
+// }
 
 });
 
@@ -3005,8 +3049,8 @@ return ` <div class="cart-item active">
                 </div>
                 <div class="cart-quantity">
                     <div class="quantity">
-                        <button class="minus"><ion-icon name="remove-outline"></ion-icon></button>
-                        <p>${quantityValue.innerText}</p>
+                        <button class="minus" ><ion-icon name="remove-outline"></ion-icon></button>
+                        <p id='cart-quantity'>${quantityValue.innerText}</p>
                         <button class="plus"><ion-icon name="add-outline"></ion-icon></button>
                     </div>
                     <p class="shirt-price">${shirtPrice}</p>
@@ -3015,18 +3059,14 @@ return ` <div class="cart-item active">
                 </div>
                 <ion-icon class="cart-trash" name="trash-outline"></ion-icon>
             </div>`;
-    
-            decrease();
-increase();           
+            
 }
-;
+
 //cartTrash event
 
-cartTrashBtn.forEach(btn=>{
-    btn.addEventListener('click',removeItem);
-});
 function removeItem(){
     this.parentElement.remove();
+   
 }
 
 
@@ -3042,6 +3082,8 @@ minusBtn.forEach(minBtn=>{
 function decrease(){
     if(inc<=0){
         inc=1;
+        
+ 
         quantityValue.innerHTML=inc;
     }
         inc--;
@@ -3061,9 +3103,7 @@ function increase(){
        alert('Maximum 5 Shirts Only')
        quantityValue.innerHTML=inc;
     }
-    // else{
-    //     alert('Maximum Shirts Only');
-    // }
+    
     
 }
 
