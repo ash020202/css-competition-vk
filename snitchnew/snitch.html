@@ -649,12 +649,12 @@
             
             
            }
-           .shirt-detail #shirt-name{
-            font-weight: bolder;
+           .shirt-detail .shirt-name{
+            font-weight: 500;
             font-size: 30px;
             padding-bottom: 10px;
            }
-           #shirt-name ~ p{
+           .shirt-name ~ p{
             letter-spacing: 5px;
            }
            .shirt-detail p{
@@ -747,21 +747,109 @@
 
            }
            .cart-modal.active{
-            transition: 0.3s;
+            transition: 0.5s ease;
             right: 0;
            }
            .cart-container{
-            padding: 30px;
+            padding: 20px;
+
            }
-           .cart-container .title{
+           .cart-header .title{
             
-            border-bottom: 1px solid #eaeae4;
-            font-weight: 600;
-            font-size: 1.5rem;
-            letter-spacing: 3px;
+            
+            font-weight: 300;
+            font-size: 1.8rem;
+           
             text-transform: uppercase;
-            padding-bottom: 20px;
+           
            }
+           .cart-modal .cart-header{
+            padding: 20px;
+            border-bottom: 1px solid #eaeae4;
+            width: 100%;
+            display: flex;
+           justify-content: space-between;
+           align-items: center;
+           }
+           .cart-header button{
+            
+            background:none;
+            border: none;
+        
+           }
+           .cart-item{
+            width: 100%;
+            border-bottom: 1px solid #eaeae4;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0.2;
+            position: relative;
+
+           }
+           .cart-item.active{
+            transform: translateY(0px);
+            opacity: 1;
+            transition:0.8s transform, 1.5s opacity ease;
+           }
+           .cart-img{
+            width: 80px;
+            height: 100px;
+          
+
+           }
+           .cart-img img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+           }
+           .cart-shirt{
+            padding: 0px 25px 0px 0px;
+
+            
+           }
+           .cart-shirt p{
+            padding: 0;
+            letter-spacing: 0;
+            line-height: 20px;
+           }
+
+           .cart-quantity{
+            
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+
+           }
+           .cart-quantity .quantity ion-icon{
+            font-size: 12px;
+           }
+            .cart-quantity .quantity{
+                margin-left: 0;
+                
+                
+            }
+           
+            .cart-quantity .shirt-price{
+                margin-top: 10px;
+            }
+            .cart-item #cart-trash{
+               
+                font-size: 35px !important;
+                text-align: center;
+                position: absolute;
+                right: -15px;
+                top: 40px;
+                
+            }
+
 
            @media (max-width:600px) {
             .offer {
@@ -1010,8 +1098,8 @@
                 </div> 
                 <div class="card-right">
                     <div class="shirt-detail">
-                        <p id="shirt-name"></p>
-                        <p id="shirt-price"></p>
+                        <p class="shirt-name"></p>
+                        <p class="shirt-price"></p>
                         <p>(incl. of all taxes)</p>
                     </div>
                     <hr>
@@ -1027,9 +1115,9 @@
                        <div class="quantity-box">
                         <p class="quan">Quantity</p>
                         <div class="quantity">
-                            <button class="plus"><ion-icon name="remove-outline"></ion-icon></button>
+                            <button class="minus"><ion-icon name="remove-outline"></ion-icon></button>
                             <p id="prod-quantity">1</p>
-                            <button class="minus"><ion-icon name="add-outline"></ion-icon></button>
+                            <button class="plus"><ion-icon name="add-outline"></ion-icon></button>
 
                             
     
@@ -1795,8 +1883,8 @@
         <div class="container">
             <div class="box" data-aos="fade-right" >
                 <img data-id="1" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-04-M31.jpg?v=1700573728&amp;width=1080" alt="">
-                <p>Wilder Navy Shirt</p>
-                <p>Rs. 1,299</p>
+                <p class="prod-name">Wilder Navy Shirt</p>
+                <p class="prod-price">Rs. 1,299</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -1806,8 +1894,8 @@
             </div>
             <div  class="box" data-aos="fade-right">
                 <img data-id="2" src="//www.snitch.co.in/cdn/shop/files/4MSS2463-01-M26.jpg?v=1700573416&width=1800" alt="">
-                <p>Wilder White Shirt</p>
-                <p>Rs. 1,299</p>
+                <p class="prod-name">Wilder White Shirt</p>
+                <p class="prod-price">Rs. 1,299</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -1817,8 +1905,8 @@
             </div>
             <div  class="box" data-aos="fade-right" >
                 <img data-id="3" src="//www.snitch.co.in/cdn/shop/files/4MSS2597-01-M33.jpg?v=1703677941&width=1800" alt="">
-                <p>Nector White Hakoba Shirt</p>
-                <p>Rs. 999</p>
+                <p class="prod-name">Nector White Hakoba Shirt</p>
+                <p class="prod-price">Rs. 999</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -1828,8 +1916,8 @@
             </div>
             <div class="box" data-aos="fade-left">
                 <img data-id="4" src="//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M41.jpg?v=1703677987&width=1800" alt="">
-                <p>Nector Maroon Hakoba Shirt</p>
-                <p>Rs. 999</p>
+                <p class="prod-name">Nector Maroon Hakoba Shirt</p>
+                <p class="prod-price">Rs. 999</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -1839,8 +1927,8 @@
             </div>
             <div class="box" data-aos="fade-left">
                 <img data-id="5" src="//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M37.jpg?v=1703678054&width=1800" alt="">
-                <p>Nector Navy Hakoba Shirt</p>
-                <p>Rs. 999</p>
+                <p class="prod-name">Nector Navy Hakoba Shirt</p>
+                <p class="prod-price">Rs. 999</p>
                 <button>S</button>
                 <button>M</button>
                 <button>L</button>
@@ -2792,16 +2880,15 @@
     </div>
 
 
-    <div class="cart-modal active">
+    <div class="cart-modal">
+        <div class="cart-header"> 
+            <div class="title">Cart</div>
+            <button id="close-cart"><ion-icon name="close-outline"></ion-icon></button>
+        </div>
         <div class="cart-container">
-            <div> 
-                <div class="title">Cart</div>
-                <button id="close"><ion-icon name="close-outline"></ion-icon></button>
-            </div>
-            <div class="cart-item">
-                <img src="" alt="" srcset="">
+       
 
-            </div>
+          
         </div>
 
 
@@ -2836,19 +2923,23 @@
         const products=document.querySelectorAll('.box');
         const modal=document.getElementById('product-detail');
         const closeBtn=document.getElementById('close');
+
         closeBtn.addEventListener('click',()=>{
-            modal.classList.remove('active')
+            modal.classList.remove('active');
             document.body.classList.remove('active');
             
           
         });
        
-       
+       let shirtName,shirtPrice,shirtImg;
         products.forEach(product=>{
             product.addEventListener('click',function (){
                 document.body.classList.add('active');
                 modal.classList.add('active');
-              
+                shirtName=product.querySelector('.prod-name').innerHTML;
+                shirtPrice=product.querySelector('.prod-price').innerHTML;
+                shirtImg=product.querySelector('img').src;
+                
                 
 
             });
@@ -2862,6 +2953,119 @@
 const images=document.querySelectorAll('.image-select a');
 let imgId=1;
 
+
+
+//quantity increase and decrease
+const wishListBtn=document.getElementById('wish');
+const cartTrashBtn=document.querySelectorAll('.cart-trash');
+let quantityValue=document.getElementById('prod-quantity');
+let inc=1;
+const minusBtn=document.querySelectorAll('.minus');
+const plusBtn=document.querySelectorAll('.plus');
+
+const cartModal=document.querySelector('.cart-modal');
+const cartBtn=document.getElementById('add-cart');
+const cartRemove=document.getElementById('close-cart');
+
+// let htmlCartItem=cartcontainer.innerHTML+=cartItem;
+const productCard=document.querySelector('.product-card');
+
+//wishList event
+
+wishListBtn.addEventListener('click',()=>{
+    cartModal.classList.add('active');
+productCard.style.display='none';
+
+});
+
+//add to cart function
+cartBtn.addEventListener('click',()=>{
+cartModal.classList.add('active');
+productCard.style.display='none';
+
+let element=createCartItem(shirtName,shirtPrice,shirtImg);
+let newElement=document.createElement('div');
+newElement.innerHTML=element;
+let cartcontainer=document.querySelector('.cart-container');
+cartcontainer.append(newElement);
+decrease();
+increase();
+
+});
+
+//create and add cart items
+function createCartItem(shirtName,shirtPrice,shirtImg){
+return ` <div class="cart-item active">
+                <div class="cart-img">
+                    <img src="${shirtImg}">
+                </div>
+                <div class="cart-shirt">
+                    <p class="shirt-name">${shirtName}</p>
+                    <p class="shirt-size">Size: </p>
+                </div>
+                <div class="cart-quantity">
+                    <div class="quantity">
+                        <button class="minus"><ion-icon name="remove-outline"></ion-icon></button>
+                        <p>${quantityValue.innerText}</p>
+                        <button class="plus"><ion-icon name="add-outline"></ion-icon></button>
+                    </div>
+                    <p class="shirt-price">${shirtPrice}</p>
+                    
+
+                </div>
+                <ion-icon class="cart-trash" name="trash-outline"></ion-icon>
+            </div>`;
+    
+            decrease();
+increase();           
+}
+;
+//cartTrash event
+
+cartTrashBtn.forEach(btn=>{
+    btn.addEventListener('click',removeItem);
+});
+function removeItem(){
+    this.parentElement.remove();
+}
+
+
+cartRemove.addEventListener('click',()=>{
+cartModal.classList.remove('active');
+productCard.style.display='flex';
+});
+
+//decrease function
+minusBtn.forEach(minBtn=>{
+    minBtn.addEventListener('click',decrease);
+});
+function decrease(){
+    if(inc<=0){
+        inc=1;
+        quantityValue.innerHTML=inc;
+    }
+        inc--;
+        quantityValue.innerHTML=inc;
+    
+}
+//increase function
+plusBtn.forEach(pBtn=>{
+    pBtn.addEventListener('click',increase);
+
+})
+function increase(){
+   
+        inc++;
+        quantityValue.innerHTML=inc;
+        if(inc>=5){
+       alert('Maximum 5 Shirts Only')
+       quantityValue.innerHTML=inc;
+    }
+    // else{
+    //     alert('Maximum Shirts Only');
+    // }
+    
+}
 
 //set image onclick
 
@@ -2887,8 +3091,8 @@ const mobimg4=document.getElementById('mobimg4');
 const mobimg5=document.getElementById('mobimg5');
 const mobimg6=document.getElementById('mobimg6');
 const mobimg7=document.getElementById('mobimg7');
-const shirtName=document.getElementById('shirt-name');
-const shirtPrice=document.getElementById('shirt-price');
+const cardShirtName=document.querySelectorAll('.shirt-name');
+const cardShirtPrice=document.querySelectorAll('.shirt-price');
 const productImages=[{
     id:1,
     Shirtname:'Wilder Navy Shirt',price:'Rs. 1,299',
@@ -2932,7 +3136,7 @@ const productImages=[{
     link7:"//www.snitch.co.in/cdn/shop/files/4MSS2597-02-M4.jpg?v=1703677987&width=1800"
 },
 {id:5,
-    Shirtname:'Wilder Navy Shirt',price:'Rs. 1,299',
+    Shirtname:'Nector Navy Hakoba Shirt',price:'Rs. 999',
     link1:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M37.jpg?v=1703678054&width=1800",
     link2:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M5.jpg?v=1703678069&width=1800",
     link3:"//www.snitch.co.in/cdn/shop/files/4MSS2597-04-M23.jpg?v=1703678069&width=1800",
@@ -2970,15 +3174,24 @@ let prodId=productImages.filter(name=>{
         mobimg5.src=name.link5;
         mobimg6.src=name.link6;
         mobimg7.src=name.link7;
-        shirtName.innerHTML=name.Shirtname;
-        shirtPrice.innerHTML=name.price;
+        // cartImg.src=name.link1;
+        cardShirtName.forEach(shirt=>{
+            shirt.innerHTML=name.Shirtname;
+        });
+        cardShirtPrice.forEach(shirtP=>{
+            shirtP.innerHTML=name.price;;
+        });
+        
+        
     }
 })
 
 }); });
 
-             
-      
+
+
+
+ 
 //click to next and previous
 
 const nextBtn=document.getElementById('next');
@@ -3057,38 +3270,7 @@ function moveImage(){
 }
 
 
-//quantity increase and decrease
 
-let quantityValue=document.getElementById('prod-quantity');
-let inc=1;
-const minusBtn=document.querySelector('.minus');
-const plusBtn=document.querySelector('.plus');
-
-//decrease function
-minusBtn.addEventListener('click',()=>{
-   
-    if(inc>=1 && inc<5){
-        inc++;
-        quantityValue.innerHTML=inc;
-    }
-    else{
-        alert('Maximum Shirts Only');
-    }
-});
-
-//increase function
-
-plusBtn.addEventListener('click',()=>{
-    if(inc<=0){
-        inc=1;
-        quantityValue.innerHTML=inc;
-    }
-    else{
-        inc--;
-        quantityValue.innerHTML=inc;
-    }
-   
-});
 
 var burger = document.getElementById("burger");
         var back = document.getElementById("back");
